@@ -34,7 +34,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--fg);font:400 17px/1.55 var(--sans);overflow-x:hidden;padding-bottom:84px}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.55 var(--sans);overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 button{font:inherit;color:inherit;cursor:pointer}
@@ -203,9 +203,6 @@ dialog.done .f{display:none}
 /* foot */
 .foot{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:14px}
 .demo{background:var(--demo-bg);border-radius:14px;padding:14px 18px;color:var(--demo-fg);font-size:14px;margin-top:14px}
-/* sticky bar */
-.dock{position:fixed;inset:auto 0 0 0;z-index:30;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));background:linear-gradient(to top,var(--bg) 60%,transparent);display:flex;gap:10px}
-.dock .btn{flex:1;min-height:52px;white-space:nowrap;padding:0 14px}
 /* reveal */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .rv.in{opacity:1;transform:none}
@@ -232,7 +229,6 @@ dialog.done .f{display:none}
   .agrid{grid-template-columns:1fr 1fr;gap:22px}
   .dbox{grid-template-columns:1fr 1fr;align-items:center}
   .way{grid-template-columns:1fr 1fr}
-  .dock{display:none}
   /* каждый блок помещается в окно: высоты считаются от высоты экрана */
   .assort,.scene,.promise,.reviews,.deliver,.contact{margin-top:clamp(48px,calc(var(--vh)*0.07),84px)}
   .assort{--ah:clamp(190px,calc((calc(var(--vh)*1.0) - 290px)/2),330px)}
@@ -481,7 +477,7 @@ fit();addEventListener('resize',fit)})();
       <div class="crow"><span>Адрес</span><b>Пермь, Монастырская улица, 93, МТЦ «Слудский», 1 этаж</b>
         <a href="https://yandex.ru/maps/org/1796503492/" rel="noopener">Построить маршрут в Яндекс Картах</a></div>
       <div class="crow"><span>Телефоны и мессенджеры</span>
-        <div class="ph"><i class="ico ico-max" title="MAX">MAX</i><b class="num">+7 (902) 473-76-48</b><button type="button" class="mini" data-copy="+79024737648">Скопировать</button></div>
+        <div class="ph"><i class="ico ico-max" title="MAX">MAX</i><b class="num">+7 (902) 473-76-48</b></div>
         <div class="ph"><i class="ico" title="Звонок"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></i><a class="num" href="tel:+79824733185"><b>+7 (982) 473-31-85</b></a></div>
         <div class="ph"><i class="ico ico-tg" title="Telegram"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M21.5 3.6 2.9 10.8c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.1.8.7.8.5 0 .7-.2 1-.5l2.3-2.3 4.7 3.5c.9.5 1.5.2 1.7-.8L22.9 5c.3-1.2-.5-1.8-1.4-1.4zM8.5 13.3l9.7-6.1c.5-.3.9-.1.5.2l-8.1 7.3-.3 3.4z"/></svg></i><a class="num" href="https://t.me/+79223220640"><b>+7 (922) 322-06-40</b></a></div>
       </div>
@@ -524,11 +520,6 @@ fit();addEventListener('resize',fit)})();
     <button type="button" class="btn btn-main f" id="sendMax">Отправить</button>
   </form>
 </dialog>
-
-<div class="dock">
-  <button type="button" class="btn btn-main" data-open="send">Написать</button>
-  <a class="btn btn-ghost" href="tel:+79824733185">Позвонить</a>
-</div>
 
 <script>
 (function(){
